@@ -68,3 +68,42 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Amplify
+
+- `npm install -g @aws-ampilify/cli`
+- Create IAM user to get access key
+- `amplify configure`
+  - needs region
+  - needs IAM username
+  - needs IAM user access key and secret access key
+  - default profile name
+- `amplify init`
+- `amplify hosting add`
+- `amplify publish` to deploy live after making changes
+
+### User auth
+
+- `ampilify add auth`
+- `amplify status`
+- `amplifly push`
+- `npm add aws-amplify aws-amplify-react`
+- `cat aws/aws-exports.js`
+- look at aws cognito to verify that identity pool was created
+
+### GraphQL API with Dynamo DB
+
+- `amplify add api`
+  - choose rest or (pick graph)
+  - name: todo (defaults)
+  - authType: Amazon cognito user pool
+  - annotated schema: no
+  - guided schema creation: yes
+  - description type of schema: single object
+  - do not have a schema
+  - create a schema
+- `amplify push` (updates exports.js also)
+- generate code force: yes (defaults for the rest)
+- defaults for the rest
+- Get client ID from cognito user pools to run queries from aws app sync
+- ``
